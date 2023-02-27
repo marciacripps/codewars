@@ -1,4 +1,8 @@
-# There are two lists, possibly of different lengths. The first one consists of keys, the second one consists of values. Write a function createDict(keys, values) that returns a dictionary created from keys and values. If there are not enough values, the rest of keys should have a None (JS null)value. If there not enough keys, just ignore the rest of values.
+# There are two lists, possibly of different lengths. The first one consists of keys, 
+# the second one consists of values. Write a function createDict(keys, values) that 
+# returns a dictionary created from keys and values. If there are not enough values, 
+# the rest of keys should have a None (JS null)value. If there not enough keys, 
+# just ignore the rest of values.
 
 # Example 1:
 
@@ -32,10 +36,20 @@ def create_dict(keys, values):
 
 #see below for using for loops
 def createDict(keys, values):
-    # Create a dictionary using a list comprehension
-    result = {keys[i]: values[i] if i < len(values) else None for i in range(len(keys))}
+    # Create an empty dictionary
+    result = {}
+
+    # Iterate through the keys and values
+    for i in range(min(len(keys), len(values))):
+        # Add the key and value to the dictionary
+        result[keys[i]] = values[i]
+
+    # Add any remaining keys with None value
+    for i in range(len(keys) - len(values)):
+        result[keys[i + len(values)]] = None
 
     return result
+
 
     
 keys = ["key1", "key2", "key3"]
