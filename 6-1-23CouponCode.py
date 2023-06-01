@@ -4,12 +4,10 @@
 # A coupon is no more valid on the day AFTER the expiration date. All dates will be passed as strings in this format: "MONTH DATE, YEAR".
 
 
-def check_coupon(entered_code, correct_code, current_date, expiration_date):
-    return True if entered_code == correct_code and current_date >= expiration_date else False
-
+from datetime import datetime
 
 def check_coupon(entered_code, correct_code, current_date, expiration_date):
-    if entered_code==correct_code and current_date>=expiration_date:
-        return True
-    else:
-        return False
+    now = datetime.strptime(current_date, "%B %d, %Y")
+    exp = datetime.strptime(expiration_date, "%B %d, %Y")
+
+    return entered_code is correct_code and now <= exp
