@@ -86,4 +86,3 @@ from people p
 left join visits v on p.id = v.person_id 
 group by p.name
 order by countries_visited desc, p.name asc 
-
