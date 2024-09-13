@@ -29,15 +29,16 @@
 -- | Stephen Fry     | Didn't know the difference between inner and left joins | 2023-06-19     |
 
 select * from interview_failures
-
+--take every unique failure_reason and group it up 
 select failure_reason
 from interview_failures
 group by failure_reason
-
+-- sum the failure_reason (this why we group by so it dont count everything) 
+-- sum(1) as cnt 
 select failure_reason, sum(1) as cnt
 from interview_failures
 group by failure_reason
-
+--order by cnt biggest to smallest number
 select failure_reason, sum(1) as cnt
 from interview_failures
 group by failure_reason
