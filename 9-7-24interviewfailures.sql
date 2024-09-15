@@ -28,6 +28,11 @@
 -- | Dave Brown      | Claimed to be a Python expert but couldn't write a loop | 2023-06-15     |
 -- | Stephen Fry     | Didn't know the difference between inner and left joins | 2023-06-19     |
 
+select failure_reason sum(1) as cnt 
+from interview_failures
+group by failure_reason 
+order by cnt desc 
+
 select * from interview_failures
 --take every unique failure_reason and group it up 
 select failure_reason

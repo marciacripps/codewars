@@ -52,6 +52,26 @@
 
 -- GLHF! -->
 
+select sum(c) as hidden_code
+from(
+    select ascii(left(split_part(name,' ', 2),1) ) as ascii_value as c 
+    from employees
+    where left_date is null
+    order by joined_date 
+    limit 5) 
+    t
+
+
+
+
+
+select split_part(name,' ',2) as last_name
+from employees
+where left_date is null
+order by joined_date 
+limit 5
+
+
 select * from employees 
 -- get employees still employed
 select * from employees 
