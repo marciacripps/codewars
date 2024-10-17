@@ -42,3 +42,4 @@ point2 = (2, 2)
 
 result = submatrix_sum(matrix, point1, point2)
 print(result)
+#i got 21 in result for matrix provided 
