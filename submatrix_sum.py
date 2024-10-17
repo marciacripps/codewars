@@ -37,8 +37,8 @@ matrix = [
     [7, 5, 4, 3, 2]
 ]
 
-point1 = (0, 0)  
-point2 = (2, 2)  
+point1 = (0, 0)  #top left 
+point2 = (2, 2)  #3rd row 3rd col 
 
 result = submatrix_sum(matrix, point1, point2)
 print(result)
