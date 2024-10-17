@@ -1,4 +1,6 @@
-# Write a function in your favorite programming language that takes a two-dimensional integer array (matrix), and two indices in the array, and use those to compute the sum of the submatrix bounded by the two indices. In other words, Imagine they represent corners of a box and you’re summing the values inside the box.  
+# Write a function in your favorite programming language that takes a two-dimensional integer array (matrix), and two indices in the array,
+# and use those to compute the sum of the submatrix bounded by the two indices. In other words, Imagine they represent corners of a box and 
+#you’re summing the values inside the box.  
 
 # Example matrix -
 # [[2 1 4 5 2],
@@ -42,4 +44,18 @@ point2 = (2, 2)  #3rd row 3rd col
 
 result = submatrix_sum(matrix, point1, point2)
 print(result)
-#i got 21 in result for matrix provided 
+#i got 21 in result for matrix,points provided 
+
+matrix = [
+    [2, 1, 4, 5, 2],
+    [2, 2, 1, 5, 3],
+    [2, 5, 2, 1, 7],
+    [7, 5, 4, 3, 2]
+]
+
+point1 = (1, 1)  #2nd row 2nd col
+point2 = (2, 2)  #3rd row 3rd col 
+
+result = submatrix_sum(matrix, point1, point2)
+print(result)
+#i got 10 in result for matrix,points provided 
